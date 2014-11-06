@@ -21,6 +21,7 @@ when "debian"
     # The package starts up immediately, then additional config is added and the
     # restart command fails to work. Instead, stop the database before changing
     # the configuration.
+    options "--force-yes"
     notifies :stop, "service[mysql]", :immediately
   end
 when "rhel"
